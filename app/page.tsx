@@ -57,7 +57,7 @@ export default function Home() {
       <header className="border-b border-slate-700/50 backdrop-blur-sm bg-slate-900/50 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
+            <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
              <Image
   src="/logo-256.png"
   alt="LoanApp logo"
@@ -69,7 +69,7 @@ export default function Home() {
                 <h1 className="text-xl font-bold text-white">LoanApp.co.ke</h1>
                 <p className="text-xs text-slate-400">Compare loan apps in Kenya</p>
               </div>
-            </div>
+            </a>
             <nav className="hidden md:flex items-center gap-6 text-sm">
               <a href="#calculator" className="text-slate-300 hover:text-emerald-400 transition-colors">Calculator</a>
               <a href="#compare" className="text-slate-300 hover:text-emerald-400 transition-colors">Compare</a>
