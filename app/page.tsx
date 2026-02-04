@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import { loanApps, formatCurrency, LoanApp } from '@/data/loanApps';
-
+import Image from "next/image";
 type SortField = 'interestRateMonthly' | 'maxAmount' | 'maxTermDays' | 'playStoreRating';
 type SortOrder = 'asc' | 'desc';
 type CategoryFilter = 'all' | 'mobile-money' | 'bank' | 'fintech';
@@ -456,9 +456,15 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-lg">
-                  💰
-                </div>
+                <Image
+  src="/logo-256.png"
+  alt="LoanApp logo"
+  width={32}
+  height={32}
+  className="rounded-lg"
+  priority
+/>
+
                 <span className="text-lg font-bold text-white">LoanApp.co.ke</span>
               </div>
               <p className="text-sm text-slate-400">
