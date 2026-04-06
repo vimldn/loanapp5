@@ -127,7 +127,7 @@ export const blogPosts3C: BlogPost[] = [
 </tbody>
 </table>
 
-<h2>Frequently Asked Questions</h2>
+<h2>Related Guides on loanapp.co.ke</h2><ul><li><a href="/crb-check" style="color:#f59e0b">CRB Check Guide</a></li><li><a href="/blacklist" style="color:#f59e0b">Loan App Blacklist</a></li><li><a href="/cbk-licensed" style="color:#f59e0b">CBK Licensed Apps Only</a></li></ul><h2>Frequently Asked Questions</h2>
 
 <h3>Will I be arrested if I don't pay my Tala or Branch loan?</h3>
 <p>No. You cannot be arrested for failing to repay a consumer loan in Kenya. Debt default is a civil matter. Any app or agent claiming otherwise is lying to you and violating the Consumer Protection Act.</p>
@@ -288,7 +288,7 @@ Branch has a formal complaint escalation path. If in-app support does not resolv
 <li>Only use <strong>CBK-licensed apps</strong> — unlicensed apps have far fewer accountability mechanisms</li>
 </ul>
 
-<h2>Frequently Asked Questions</h2>
+<h2>Related Guides on loanapp.co.ke</h2><ul><li><a href="/blacklist" style="color:#f59e0b">Loan App Blacklist</a></li><li><a href="/cbk-licensed" style="color:#f59e0b">Switch to a Licensed App</a></li><li><a href="/crb-check" style="color:#f59e0b">Check Your CRB Status</a></li></ul><h2>Frequently Asked Questions</h2>
 
 <h3>Can I sue a loan app for calling my contacts?</h3>
 <p>Yes — under the Data Protection Act 2019, you can pursue civil compensation for unlawful data processing that causes you harm. The ODPC can also impose fines. Speak to a lawyer if the harm has been significant (e.g., job loss due to employer contact).</p>
@@ -480,7 +480,7 @@ Branch has a formal complaint escalation path. If in-app support does not resolv
 </tbody>
 </table>
 
-<h2>Frequently Asked Questions</h2>
+<h2>Related Guides on loanapp.co.ke</h2><ul><li><a href="/crb-check" style="color:#f59e0b">Full CRB Check Guide</a></li><li><a href="/crb-quiz" style="color:#f59e0b">CRB Status Quiz</a></li><li><a href="/blacklist" style="color:#f59e0b">Apps Known for False Listings</a></li><li><a href="/cbk-licensed" style="color:#f59e0b">Borrow Safely — Licensed Only</a></li></ul><h2>Frequently Asked Questions</h2>
 
 <h3>How do I know if a CRB listing is wrong vs just unflattering?</h3>
 <p>A wrong listing is one that is factually incorrect: the amount is wrong, the debt was paid, the debt was never taken, or proper procedure was not followed. A listing that is accurate but unflattering (you did default and the record is correct) is not disputable on factual grounds, though the 30-day notice requirement still applies.</p>

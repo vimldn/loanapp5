@@ -307,6 +307,41 @@ export default function LoanFinderPage() {
         )}
       </div>
 
+      {/* Related guides */}
+      <section className="mt-14 mb-2">
+        <h2 className="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4 px-4 sm:px-0">Before you apply</h2>
+        <div className="grid sm:grid-cols-2 gap-3 px-4 sm:px-0">
+          <Link href="/total-cost-calculator" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">🧮</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">Calculate True Cost</p>
+              <p className="text-stone-500 text-xs mt-0.5">See total repayment including all fees first</p>
+            </div>
+          </Link>
+          <Link href="/cbk-licensed" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">✅</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">CBK Licensed List</p>
+              <p className="text-stone-500 text-xs mt-0.5">Verify your chosen app is regulated</p>
+            </div>
+          </Link>
+          <Link href="/crb-check" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">📊</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">Check Your CRB</p>
+              <p className="text-stone-500 text-xs mt-0.5">Know your credit status before applying</p>
+            </div>
+          </Link>
+          <Link href="/blacklist" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">🚫</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">Apps to Avoid</p>
+              <p className="text-stone-500 text-xs mt-0.5">Blacklisted and predatory lenders in Kenya</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )

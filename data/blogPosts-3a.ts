@@ -113,7 +113,7 @@ export const blogPosts3A: BlogPost[] = [
 
 <p>Yes — maintaining accounts on both apps is a smart strategy. Build your Tala limit for smaller, urgent loans and your Branch limit for larger, planned expenses. They do not directly communicate with each other, so active accounts on both do not penalise either. Just ensure you never have an overdue balance on either at the same time.</p>
 
-<h2>Frequently Asked Questions</h2>
+<h2>Related Guides on loanapp.co.ke</h2><ul><li><a href="/cbk-licensed" style="color:#f59e0b">CBK Licensed Apps</a></li><li><a href="/total-cost-calculator" style="color:#f59e0b">True Cost Calculator</a></li><li><a href="/crb-check" style="color:#f59e0b">CRB Check Guide</a></li></ul><h2>Frequently Asked Questions</h2>
 
 <h3>How long does it take to go from KES 500 to KES 10,000 on Tala?</h3>
 <p>With early repayments and consistent borrowing, most users reach KES 10,000 within 4–6 loan cycles — roughly 3–5 months. Without optimising, it can take 8–12 months.</p>
@@ -230,7 +230,7 @@ export const blogPosts3A: BlogPost[] = [
 <li><strong>Equipment or asset:</strong> 6–12 months. Branch or Eazzy Loan — match the repayment term to the asset's expected income generation period.</li>
 </ul>
 
-<h2>Frequently Asked Questions</h2>
+<h2>Related Guides on loanapp.co.ke</h2><ul><li><a href="/cbk-licensed" style="color:#f59e0b">CBK Licensed Apps</a></li><li><a href="/total-cost-calculator" style="color:#f59e0b">True Cost Calculator</a></li><li><a href="/loan-finder" style="color:#f59e0b">Loan Finder</a></li></ul><h2>Frequently Asked Questions</h2>
 
 <h3>Which loan app gives the longest repayment period in Kenya?</h3>
 <p>Branch and Eazzy Loan (Equity Bank) both offer up to 12 months. Eazzy Loan is significantly cheaper at 14% per annum vs Branch's per-month rates.</p>
@@ -372,7 +372,7 @@ export const blogPosts3A: BlogPost[] = [
 <li>Consider requiring each member to maintain their own personal Hustler Fund loans alongside the group loan — it signals financial activity</li>
 </ol>
 
-<h2>Frequently Asked Questions</h2>
+<h2>Related Guides on loanapp.co.ke</h2><ul><li><a href="/cbk-licensed" style="color:#f59e0b">CBK Licensed Apps</a></li><li><a href="/sacco-vs-digital" style="color:#f59e0b">SACCO vs Digital Loans</a></li><li><a href="/total-cost-calculator" style="color:#f59e0b">Compare Loan Costs</a></li></ul><h2>Frequently Asked Questions</h2>
 
 <h3>Does the Hustler Fund Group Loan require collateral?</h3>
 <p>No. Like the personal Hustler Fund loan, the group loan requires no physical collateral. Group members act as mutual guarantors for each other.</p>
@@ -502,7 +502,7 @@ export const blogPosts3A: BlogPost[] = [
 <li>Never share your phone number with unofficial "loan comparison" sites — many sell your number to app marketers</li>
 </ul>
 
-<h2>Frequently Asked Questions</h2>
+<h2>Related Guides on loanapp.co.ke</h2><ul><li><a href="/blacklist" style="color:#f59e0b">Loan App Blacklist</a></li><li><a href="/cbk-licensed" style="color:#f59e0b">CBK Licensed Apps</a></li></ul><h2>Frequently Asked Questions</h2>
 
 <h3>Can a loan app legally send me SMS after I delete their app?</h3>
 <p>Technically yes, if you consented to marketing communications during registration. But you can withdraw that consent at any time. The ODPC requires companies to honour opt-out requests promptly.</p>

@@ -288,6 +288,41 @@ export default function CBKLicensedPage() {
         </div>
       </section>
 
+      {/* Related guides */}
+      <section className="mt-14 mb-2">
+        <h2 className="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4 px-4 sm:px-0">Related guides</h2>
+        <div className="grid sm:grid-cols-2 gap-3 px-4 sm:px-0">
+          <Link href="/blacklist" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">🚫</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">Loan App Blacklist</p>
+              <p className="text-stone-500 text-xs mt-0.5">Apps to avoid — and why they are dangerous</p>
+            </div>
+          </Link>
+          <Link href="/crb-check" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">📊</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">CRB Check Guide</p>
+              <p className="text-stone-500 text-xs mt-0.5">Check your credit status before borrowing</p>
+            </div>
+          </Link>
+          <Link href="/total-cost-calculator" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">🧮</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">True Cost Calculator</p>
+              <p className="text-stone-500 text-xs mt-0.5">See the real cost of any loan including fees</p>
+            </div>
+          </Link>
+          <Link href="/loan-finder" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">🔍</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">Loan Finder</p>
+              <p className="text-stone-500 text-xs mt-0.5">Match to the right licensed app for your needs</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

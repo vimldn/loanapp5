@@ -352,6 +352,41 @@ export default function SaccoVsDigitalPage() {
         </div>
       </section>
 
+      {/* Related guides */}
+      <section className="mt-14 mb-2">
+        <h2 className="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4 px-4 sm:px-0">Related guides</h2>
+        <div className="grid sm:grid-cols-2 gap-3 px-4 sm:px-0">
+          <Link href="/cbk-licensed" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">✅</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">CBK Licensed Apps</p>
+              <p className="text-stone-500 text-xs mt-0.5">All regulated digital loan options compared</p>
+            </div>
+          </Link>
+          <Link href="/total-cost-calculator" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">🧮</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">True Cost Calculator</p>
+              <p className="text-stone-500 text-xs mt-0.5">Compare SACCO vs app costs side by side</p>
+            </div>
+          </Link>
+          <Link href="/loan-finder" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">🔍</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">Loan Finder</p>
+              <p className="text-stone-500 text-xs mt-0.5">Find the right option for your situation</p>
+            </div>
+          </Link>
+          <Link href="/crb-check" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">📊</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">CRB Check Guide</p>
+              <p className="text-stone-500 text-xs mt-0.5">Check your credit before applying to a SACCO</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

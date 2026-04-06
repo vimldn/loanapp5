@@ -120,7 +120,7 @@ export const blogPosts3B: BlogPost[] = [
 
 <p>The optimal strategy: start with M-Shwari to build your M-Pesa loan history, then unlock KCB M-Pesa for larger amounts once your limit grows. Use Zenka only if you cannot access either bank product.</p>
 
-<h2>Frequently Asked Questions</h2>
+<h2>Related Guides on loanapp.co.ke</h2><ul><li><a href="/total-cost-calculator" style="color:#f59e0b">True Cost Calculator</a></li><li><a href="/cbk-licensed" style="color:#f59e0b">CBK Licensed Apps</a></li><li><a href="/loan-finder" style="color:#f59e0b">Loan Finder</a></li></ul><h2>Frequently Asked Questions</h2>
 
 <h3>Which is cheaper — M-Shwari or KCB M-Pesa?</h3>
 <p>M-Shwari is cheaper for 30-day loans of the same amount. KCB M-Pesa becomes the better choice when you need more than KES 50,000 or want repayment terms longer than 30 days.</p>
@@ -280,7 +280,7 @@ export const blogPosts3B: BlogPost[] = [
 
 <p>The smart strategy: use Tala for your first 2–3 loans to establish a digital credit history, then switch to Branch for its better long-term rate trajectory and higher limits. Maintaining both accounts does not hurt — just do not have outstanding balances on both simultaneously.</p>
 
-<h2>Frequently Asked Questions</h2>
+<h2>Related Guides on loanapp.co.ke</h2><ul><li><a href="/total-cost-calculator" style="color:#f59e0b">Compare Their True Costs</a></li><li><a href="/cbk-licensed" style="color:#f59e0b">CBK Licensed Lenders</a></li><li><a href="/crb-check" style="color:#f59e0b">Protect Your CRB Score</a></li></ul><h2>Frequently Asked Questions</h2>
 
 <h3>Is Tala or Branch better for first-time borrowers?</h3>
 <p>Tala generally has a slightly higher first-time approval rate and is faster. Most Kenya-based borrowers trying a loan app for the first time should start with Tala.</p>
@@ -497,7 +497,7 @@ export const blogPosts3B: BlogPost[] = [
 <li><strong>Start with Hustler Fund</strong> if you have never borrowed digitally — cheapest rate, no CRB check, works on any phone</li>
 </ul>
 
-<h2>Frequently Asked Questions</h2>
+<h2>Related Guides on loanapp.co.ke</h2><ul><li><a href="/cbk-licensed" style="color:#f59e0b">CBK Licensed Apps</a></li><li><a href="/total-cost-calculator" style="color:#f59e0b">True Cost Calculator</a></li><li><a href="/loan-finder" style="color:#f59e0b">Loan Finder</a></li></ul><h2>Frequently Asked Questions</h2>
 
 <h3>Can I get a loan via USSD without M-Pesa?</h3>
 <p>Most USSD loans disburse to M-Pesa. Bank-based USSD loans (Equity *247#, Co-op *667#) can disburse to your bank account instead. Airtel Money users can access Airtel-specific USSD loan products without M-Pesa.</p>
