@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { AlertTriangle, XCircle, Phone, Users, Database, ShieldOff, CheckCircle2 } from 'lucide-react';
+import { AlertTriangle, XCircle, Phone, Users, Database, ShieldOff, CheckCircle2 } from '@/components/Icons';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 

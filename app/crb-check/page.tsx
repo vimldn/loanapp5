@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Search, FileText, AlertTriangle, CheckCircle2, ExternalLink, Phone, Clock } from 'lucide-react';
+import { Search, FileText, AlertTriangle, CheckCircle2, ExternalLink, Phone, Clock } from '@/components/Icons';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 

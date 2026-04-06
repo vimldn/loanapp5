@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Scale, TrendingDown, Users, Clock, Trophy, ChevronRight } from 'lucide-react';
+import { Scale, TrendingDown, Users, Clock, Trophy, ChevronRight } from '@/components/Icons';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 

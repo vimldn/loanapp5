@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Shield, CheckCircle2, XCircle, AlertTriangle, ExternalLink, Calendar } from 'lucide-react';
+import { Shield, CheckCircle2, XCircle, AlertTriangle, ExternalLink, Calendar } from '@/components/Icons';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 

@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Sparkles, ChevronRight, ArrowLeft, Trophy, AlertTriangle, RotateCcw } from 'lucide-react'
+import { Sparkles, ChevronRight, ArrowLeft, Trophy, AlertTriangle, RotateCcw } from '@/components/Icons'
 import { loanApps, formatCurrency } from '@/data/loanApps'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'

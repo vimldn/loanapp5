@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from '@/components/Icons';
 
 const hubLinks = [
   { href: '/cbk-licensed', label: 'CBK Licensed Apps' },

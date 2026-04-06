@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Calculator, Trophy, AlertTriangle, Info, ChevronDown, ChevronUp, ArrowLeft } from 'lucide-react'
+import { Calculator, Trophy, AlertTriangle, Info, ChevronDown, ChevronUp, ArrowLeft } from '@/components/Icons'
 import { loanApps, formatCurrency } from '@/data/loanApps'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
