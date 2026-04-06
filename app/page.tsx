@@ -74,6 +74,7 @@ export default function Home() {
               <a href="#calculator" className="text-slate-300 hover:text-emerald-400 transition-colors">Calculator</a>
               <a href="#compare" className="text-slate-300 hover:text-emerald-400 transition-colors">Compare</a>
               <a href="#tips" className="text-slate-300 hover:text-emerald-400 transition-colors">Tips</a>
+              <a href="/loan-finder" className="text-slate-300 hover:text-emerald-400 transition-colors">Loan Finder</a>
               <a href="/blog" className="text-slate-300 hover:text-emerald-400 transition-colors">Blog</a>
             </nav>
           </div>
@@ -387,6 +388,39 @@ export default function Home() {
               No apps found for {formatCurrency(loanAmount)}. Try adjusting the amount.
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Interactive Tools Banner */}
+      <section className="py-12 px-4 bg-slate-800/20 border-y border-slate-700/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-white mb-2">Smart Borrowing Tools</h3>
+            <p className="text-slate-400 text-sm">Find your best loan, see the true cost, and check your CRB risk</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
+            <a href="/loan-finder"
+              className="group bg-gradient-to-br from-purple-600/20 to-purple-900/20 border border-purple-500/20 hover:border-purple-500/50 rounded-2xl p-6 transition-all">
+              <div className="text-3xl mb-3">🎯</div>
+              <h4 className="text-lg font-bold text-white mb-1 group-hover:text-purple-400 transition-colors">Loan Finder Wizard</h4>
+              <p className="text-slate-400 text-sm mb-3">3 questions → your top 3 app matches with approval likelihood</p>
+              <span className="text-purple-400 text-sm font-medium">Find my best match →</span>
+            </a>
+            <a href="/total-cost-calculator"
+              className="group bg-gradient-to-br from-emerald-600/20 to-emerald-900/20 border border-emerald-500/20 hover:border-emerald-500/50 rounded-2xl p-6 transition-all">
+              <div className="text-3xl mb-3">🧮</div>
+              <h4 className="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Total Cost Calculator</h4>
+              <p className="text-slate-400 text-sm mb-3">All apps compared — including hidden fees, insurance & excise duty</p>
+              <span className="text-emerald-400 text-sm font-medium">Calculate true cost →</span>
+            </a>
+            <a href="/crb-quiz"
+              className="group bg-gradient-to-br from-blue-600/20 to-blue-900/20 border border-blue-500/20 hover:border-blue-500/50 rounded-2xl p-6 transition-all">
+              <div className="text-3xl mb-3">🔍</div>
+              <h4 className="text-lg font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">Am I CRB Blacklisted?</h4>
+              <p className="text-slate-400 text-sm mb-3">5-question quiz to assess your CRB risk + free repair guide</p>
+              <span className="text-blue-400 text-sm font-medium">Check my CRB risk →</span>
+            </a>
+          </div>
         </div>
       </section>
 

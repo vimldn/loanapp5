@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getAllBlogPosts } from '@/data/blogPosts';
+import { getAllBlogPosts } from '@/data/all-blog-posts';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
