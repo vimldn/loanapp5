@@ -137,8 +137,6 @@ export default function CRBQuizPage() {
     setAnswers({})
     setCurrentQ(0)
     setShowResult(false)
-    setEmail('')
-    setEmailSubmitted(false)
   }
 
   const colorMap = {
