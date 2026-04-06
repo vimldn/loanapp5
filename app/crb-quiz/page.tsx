@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Search, ChevronRight, CheckCircle2, AlertTriangle, XCircle, ArrowLeft, Mail } from '@/components/Icons'
+import { Search, ChevronRight, CheckCircle2, AlertTriangle, XCircle, ArrowLeft } from '@/components/Icons'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -114,8 +114,7 @@ export default function CRBQuizPage() {
   const [answers, setAnswers]         = useState<Record<number, { value: string; risk: number }>>({})
   const [currentQ, setCurrentQ]       = useState(0)
   const [showResult, setShowResult]   = useState(false)
-  const [email, setEmail]             = useState('')
-  const [emailSubmitted, setEmailSubmitted] = useState(false)
+
 
   const totalScore = Object.values(answers).reduce((sum, a) => sum + a.risk, 0)
   const result = getResult(totalScore)
@@ -132,12 +131,6 @@ export default function CRBQuizPage() {
     } else {
       setTimeout(() => setShowResult(true), 400)
     }
-  }
-
-  function handleEmailSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    // In production: POST to your API/Google Sheets
-    setEmailSubmitted(true)
   }
 
   function restart() {
@@ -264,43 +257,7 @@ export default function CRBQuizPage() {
               </div>
             </div>
 
-            {/* Email capture */}
-            {!emailSubmitted ? (
-              <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6">
-                <div className="flex items-start gap-3 mb-4">
-                  <Mail className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="font-bold text-white">Get the Free CRB Repair Guide</h3>
-                    <p className="text-slate-400 text-sm mt-0.5">
-                      We will send you a step-by-step guide to checking, disputing, and clearing your CRB record — plus tips to get loan approvals even while listed.
-                    </p>
-                  </div>
-                </div>
-                <form onSubmit={handleEmailSubmit} className="flex gap-3">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                    placeholder="Your email address"
-                    required
-                    className="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-2.5 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 transition-colors"
-                  />
-                  <button type="submit"
-                    className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold rounded-xl text-sm transition-colors shrink-0">
-                    Send Guide
-                  </button>
-                </form>
-                <p className="text-xs text-slate-600 mt-2">No spam. Unsubscribe anytime.</p>
-              </div>
-            ) : (
-              <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-5 flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                <div>
-                  <p className="text-white font-semibold">Guide sent!</p>
-                  <p className="text-slate-400 text-sm">Check your inbox — the CRB Repair Guide is on its way.</p>
-                </div>
-              </div>
-            )}
+
 
             {/* Answer summary */}
             <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-5">
