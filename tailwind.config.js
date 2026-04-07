@@ -8,11 +8,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans:  ['var(--font-dm-sans)',    'ui-sans-serif',  'system-ui',  'sans-serif'],
-        serif: ['var(--font-playfair)',   'Georgia',        'ui-serif',   'serif'],
-        mono:  ['var(--font-space-mono)', 'ui-monospace',   'SFMono-Regular', 'monospace'],
+        sans: ['var(--font-dm-sans)', 'sans-serif'],
+        display: ['var(--font-space-grotesk)', 'sans-serif'],
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

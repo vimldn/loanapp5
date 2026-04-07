@@ -86,17 +86,17 @@ const BLACKLIST: BlacklistEntry[] = [
 ];
 
 const SEVERITY_CONFIG = {
-  high:    { label: 'HIGH RISK — Avoid', color: 'bg-red-50 border-red-400',    badge: 'bg-red-100 text-red-700 border-red-400',    icon: XCircle },
-  medium:  { label: 'MEDIUM RISK',       color: 'bg-amber-50 border-amber-400', badge: 'bg-amber-100 text-amber-700 border-amber-400', icon: AlertTriangle },
-  warning: { label: 'USE CAUTION',       color: 'bg-yellow-50 border-yellow-400', badge: 'bg-yellow-100 text-yellow-700 border-yellow-400', icon: AlertTriangle },
+  high:    { label: 'HIGH RISK — Avoid', color: 'bg-red-500/15 border-red-500/30', badge: 'bg-red-500/20 text-red-400 border-red-500/30', icon: XCircle },
+  medium:  { label: 'MEDIUM RISK', color: 'bg-amber-500/10 border-amber-500/20', badge: 'bg-amber-500/20 text-amber-400 border-amber-500/30', icon: AlertTriangle },
+  warning: { label: 'USE CAUTION', color: 'bg-yellow-500/10 border-yellow-500/20', badge: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30', icon: AlertTriangle },
 };
 
 const WARNING_SIGNS = [
-  { icon: Phone,        label: 'Calls your contacts', desc: 'Reads your phone book and contacts relatives to shame you about debt.' },
-  { icon: Users,        label: 'Group shaming SMS',   desc: 'Sends messages to your employer, friends, or family about your loan.' },
-  { icon: Database,     label: 'Hidden rollover fees',desc: 'Automatically rolls your loan over with fees you never agreed to.' },
-  { icon: ShieldOff,    label: 'No CBK licence',      desc: 'Not registered with the Central Bank of Kenya — no legal protection for you.' },
-  { icon: AlertTriangle,label: 'Undisclosed APR',     desc: 'Shows a low "rate" but doesn\'t tell you the effective annual cost.' },
+  { icon: Phone, label: 'Calls your contacts', desc: 'Reads your phone book and contacts relatives to shame you about debt.' },
+  { icon: Users, label: 'Group shaming SMS', desc: 'Sends messages to your employer, friends, or family about your loan.' },
+  { icon: Database, label: 'Hidden rollover fees', desc: 'Automatically rolls your loan over with fees you never agreed to.' },
+  { icon: ShieldOff, label: 'No CBK licence', desc: 'Not registered with the Central Bank of Kenya — no legal protection for you.' },
+  { icon: AlertTriangle, label: 'Undisclosed APR', desc: 'Shows a low "rate" but doesn\'t tell you the effective annual cost.' },
 ];
 
 export default function BlacklistPage() {
@@ -110,153 +110,185 @@ export default function BlacklistPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Header />
 
       {/* Hero */}
-      <section className="py-14 px-4 border-b-2 border-black">
-        <div className="max-w-4xl mx-auto">
-          <span className="font-mono text-sm font-bold uppercase tracking-widest border-2 border-red-600 text-red-600 px-3 py-1 mb-6 inline-flex items-center gap-2">
-            <AlertTriangle className="w-4 h-4" /> Consumer Protection Warning — {LAST_VERIFIED}
-          </span>
-          <h1 className="text-4xl md:text-6xl font-bold font-serif leading-none mb-6 tracking-tight">
-            Wall of Shame: Loan Apps to Avoid in Kenya.
+      <section className="py-14 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-full mb-6">
+            <AlertTriangle className="w-4 h-4 text-red-400" />
+            <span className="text-red-400 text-sm font-medium">Consumer Protection Warning — {LAST_VERIFIED}</span>
+          </div>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Wall of Shame: Loan Apps to Avoid in Kenya
           </h1>
-          <p className="text-gray-600 max-w-2xl leading-relaxed text-lg mb-3">
-            These apps have been flagged for predatory behaviour, operating without a CBK licence, or using illegal debt collection tactics. We publish this list to protect Kenyan borrowers.
+          <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            These apps have been flagged for predatory behaviour, operating without a CBK licence, or using illegal
+            debt collection tactics. We publish this list to protect Kenyan borrowers.
           </p>
-          <p className="text-xs font-mono text-gray-400 uppercase tracking-wide">
+          <p className="text-xs text-slate-600 mt-3">
             Know an app that should be listed? Use the CBK complaints link below to report it.
           </p>
         </div>
       </section>
 
-      <main className="max-w-4xl mx-auto px-4 py-10 space-y-12">
-
-        {/* Warning signs */}
-        <section>
-          <h2 className="text-2xl font-serif font-bold mb-6">5 Warning Signs of a Predatory Loan App</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-0 border-2 border-black lg:grid-cols-5">
-            {WARNING_SIGNS.map((sign, i) => (
-              <div key={sign.label} className="p-5 border-b-2 border-r-2 border-black last:border-r-0 hover:bg-red-50 transition-colors">
-                <div className="w-10 h-10 border-2 border-red-600 flex items-center justify-center mb-3">
-                  <sign.icon className="w-5 h-5 text-red-600" />
+      {/* Warning signs to watch for */}
+      <section className="px-4 mb-10">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-lg font-bold text-white mb-4">5 Warning Signs of a Predatory Loan App</h2>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 lg:grid-cols-5">
+            {WARNING_SIGNS.map((sign) => (
+              <div key={sign.label} className="bg-slate-800/50 border border-slate-700 rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-red-500/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <sign.icon className="w-5 h-5 text-red-400" />
                 </div>
-                <h3 className="font-bold font-mono text-xs uppercase tracking-wide mb-1">{sign.label}</h3>
-                <p className="text-gray-500 text-xs leading-relaxed">{sign.desc}</p>
+                <h3 className="text-white text-xs font-bold mb-1">{sign.label}</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">{sign.desc}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* The blacklist */}
-        <section>
-          <h2 className="text-2xl font-serif font-bold mb-6">{BLACKLIST.length} Apps Flagged — Avoid These</h2>
+      {/* The blacklist */}
+      <section className="px-4 pb-10">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-xl font-bold text-white mb-5">{BLACKLIST.length} Apps Flagged — Avoid These</h2>
           <div className="space-y-4">
             {BLACKLIST.map((entry) => {
               const sc = SEVERITY_CONFIG[entry.severity];
               const Icon = sc.icon;
               return (
-                <div key={entry.name} className={`border-2 p-6 ${sc.color} hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all duration-200`}>
-                  <div className="flex items-start justify-between gap-3 mb-4">
+                <div key={entry.name} className={`border rounded-2xl p-5 ${sc.color}`}>
+                  <div className="flex items-start justify-between gap-3 mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 border-2 border-red-600 flex items-center justify-center shrink-0">
-                        <Icon className="w-5 h-5 text-red-600" />
+                      <div className="w-9 h-9 bg-red-500/10 rounded-xl flex items-center justify-center shrink-0">
+                        <Icon className="w-5 h-5 text-red-400" />
                       </div>
                       <div>
-                        <h3 className="font-bold font-serif text-lg">{entry.name}</h3>
-                        <p className="text-xs font-mono text-gray-500">{entry.cbkStatus}</p>
+                        <h3 className="font-bold text-white">{entry.name}</h3>
+                        <p className="text-xs text-slate-500">{entry.cbkStatus}</p>
                       </div>
                     </div>
-                    <span className={`text-xs font-mono font-bold px-3 py-1 border-2 uppercase tracking-wide shrink-0 ${sc.badge}`}>
+                    <span className={`text-xs px-2.5 py-1 rounded-full border font-semibold shrink-0 ${sc.badge}`}>
                       {sc.label}
                     </span>
                   </div>
 
-                  <div className="space-y-2 mb-4">
+                  <div className="space-y-1.5 mb-3">
                     {entry.reason.map((r, i) => (
-                      <div key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                        <XCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                      <div key={i} className="flex items-start gap-2 text-sm text-slate-300">
+                        <XCircle className="w-3.5 h-3.5 text-red-400 shrink-0 mt-0.5" />
                         {r}
                       </div>
                     ))}
                   </div>
 
-                  <div className="flex items-start gap-2 text-xs font-mono text-gray-600 bg-white/60 border border-gray-300 px-3 py-2">
-                    <AlertTriangle className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-2 text-xs text-slate-500 bg-slate-900/30 rounded-lg px-3 py-2">
+                    <AlertTriangle className="w-3.5 h-3.5 text-amber-500 shrink-0 mt-0.5" />
                     <span>{entry.complaints}</span>
                   </div>
                 </div>
               );
             })}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* What to do */}
-        <section>
-          <div className="border-2 border-black p-6 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300">
-            <h2 className="font-serif text-2xl font-bold mb-5 flex items-center gap-2">
-              <CheckCircle2 className="w-6 h-6 text-emerald-600" />
-              What to Do If an App Has Harassed You
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-5">
-              {[
-                { step: '1', title: 'File a CBK complaint', desc: 'Visit centralbank.go.ke → Consumer Protection → File a Complaint. The CBK Consumer Protection Department investigates all complaints.' },
-                { step: '2', title: 'Report to the DCI', desc: 'Contact the Directorate of Criminal Investigations (DCI) if an app threatened you or shared your data illegally. File a report at dci.go.ke.' },
-                { step: '3', title: 'Contact the ODPC', desc: 'The Office of the Data Protection Commissioner (ODPC) handles illegal use of your contacts. File at odpc.go.ke.' },
-                { step: '4', title: 'Block the app immediately', desc: 'Revoke app permissions in your phone settings (Settings → Apps → Permissions). Uninstall the app and change your M-Pesa PIN.' },
-              ].map((item) => (
-                <div key={item.step} className="flex items-start gap-3">
-                  <span className="w-8 h-8 bg-black text-white flex items-center justify-center shrink-0 font-bold font-mono text-sm">
-                    {item.step}
-                  </span>
-                  <div>
-                    <h3 className="font-bold font-serif mb-1">{item.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="flex flex-wrap gap-4">
-          <Link href="/cbk-licensed" className="px-6 py-3 bg-black text-white font-bold font-mono border-2 border-black hover:bg-emerald-600 hover:border-emerald-600 transition-colors uppercase tracking-wide">
-            See CBK Licensed Apps →
-          </Link>
-          <Link href="/#compare" className="px-6 py-3 border-2 border-black text-gray-900 font-bold font-mono hover:bg-black hover:text-white transition-colors uppercase tracking-wide">
-            Compare Safe Loan Apps
-          </Link>
-        </section>
-
-        {/* Related guides */}
-        <section>
-          <h2 className="font-mono text-sm font-bold uppercase tracking-widest mb-4 text-gray-500">Related Guides</h2>
-          <div className="grid sm:grid-cols-2 gap-0 border-2 border-black divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-black">
+      {/* What to do if victimised */}
+      <section className="px-4 pb-10">
+        <div className="max-w-4xl mx-auto bg-slate-800/50 border border-slate-700 rounded-2xl p-6">
+          <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+            <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+            What to Do If an App Has Harassed You
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { href: '/cbk-licensed',         emoji: '✅', title: 'CBK Licensed Apps',    desc: 'The safe, regulated alternatives to use instead' },
-              { href: '/crb-check',            emoji: '📊', title: 'CRB Check Guide',      desc: 'If a blacklisted app listed you on CRB — fix it here' },
-              { href: '/total-cost-calculator',emoji: '🧮', title: 'True Cost Calculator', desc: 'Compare real costs before choosing an app' },
-              { href: '/loan-finder',          emoji: '🔍', title: 'Find a Safe Loan',     desc: 'Match to a regulated lender for your situation' },
-            ].map((g) => (
-              <Link key={g.href} href={g.href} className="flex items-start gap-3 p-5 hover:bg-gray-50 transition-colors group">
-                <span className="text-xl shrink-0">{g.emoji}</span>
+              { step: '1', title: 'File a CBK complaint', desc: 'Visit centralbank.go.ke → Consumer Protection → File a Complaint. The CBK Consumer Protection Department investigates all complaints.' },
+              { step: '2', title: 'Report to the DCI', desc: 'Contact the Directorate of Criminal Investigations (DCI) if an app threatened you or shared your data illegally. File a report at dci.go.ke.' },
+              { step: '3', title: 'Contact the ODPC', desc: 'The Office of the Data Protection Commissioner (ODPC) handles illegal use of your contacts. File at odpc.go.ke.' },
+              { step: '4', title: 'Block the app immediately', desc: 'Revoke app permissions in your phone settings (Settings → Apps → Permissions). Uninstall the app and change your M-Pesa PIN.' },
+            ].map((item) => (
+              <div key={item.step} className="flex items-start gap-3">
+                <span className="w-7 h-7 bg-emerald-500/20 text-emerald-400 rounded-full text-sm flex items-center justify-center shrink-0 font-bold">
+                  {item.step}
+                </span>
                 <div>
-                  <p className="font-bold font-serif group-hover:text-emerald-600 transition-colors">{g.title}</p>
-                  <p className="text-gray-500 text-xs mt-0.5 font-mono">{g.desc}</p>
+                  <h3 className="text-white text-sm font-semibold mb-1">{item.title}</h3>
+                  <p className="text-slate-400 text-xs leading-relaxed">{item.desc}</p>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <p className="text-xs font-mono text-gray-400 leading-relaxed border-t-2 border-black pt-6">
-          This blacklist is compiled from public CBK consumer protection alerts, verified social media complaints, and app store reviews.
-          For informational purposes only. Apps listed here may have updated their practices since publication. Last updated {LAST_VERIFIED}.
-        </p>
-      </main>
+      {/* CTA */}
+      <section className="px-4 pb-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-slate-400 text-sm mb-5">
+            Want to borrow safely? Only use apps from the CBK licensed list.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/cbk-licensed"
+              className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold rounded-lg text-sm transition-colors">
+              See CBK Licensed Apps
+            </Link>
+            <Link href="/#compare"
+              className="px-5 py-2.5 border border-slate-600 hover:border-emerald-500 text-white rounded-lg text-sm transition-colors">
+              Compare Safe Loan Apps
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Disclaimer */}
+      <section className="px-4 pb-10">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs text-slate-600 text-center leading-relaxed">
+            This blacklist is compiled from public CBK consumer protection alerts, verified social media complaints, and app store reviews.
+            It is for informational purposes only. Apps listed here may have updated their practices since publication.
+            Last updated {LAST_VERIFIED}. If you believe an entry is incorrect, contact us.
+          </p>
+        </div>
+      </section>
+
+      {/* Related guides */}
+      <section className="mt-14 mb-2">
+        <h2 className="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4 px-4 sm:px-0">Related guides</h2>
+        <div className="grid sm:grid-cols-2 gap-3 px-4 sm:px-0">
+          <Link href="/cbk-licensed" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">✅</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">CBK Licensed Apps</p>
+              <p className="text-stone-500 text-xs mt-0.5">The safe, regulated alternatives to use instead</p>
+            </div>
+          </Link>
+          <Link href="/crb-check" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">📊</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">CRB Check Guide</p>
+              <p className="text-stone-500 text-xs mt-0.5">If a blacklisted app listed you on CRB — fix it here</p>
+            </div>
+          </Link>
+          <Link href="/total-cost-calculator" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">🧮</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">True Cost Calculator</p>
+              <p className="text-stone-500 text-xs mt-0.5">Compare real costs before choosing an app</p>
+            </div>
+          </Link>
+          <Link href="/loan-finder" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
+            <span className="text-xl shrink-0">🔍</span>
+            <div>
+              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">Find a Safe Loan</p>
+              <p className="text-stone-500 text-xs mt-0.5">Match to a regulated lender for your situation</p>
+            </div>
+          </Link>
+        </div>
+      </section>
 
       <Footer />
     </div>
