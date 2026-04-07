@@ -111,21 +111,18 @@ function getResult(score: number): Result {
 }
 
 export default function CRBQuizPage() {
-  const [answers, setAnswers]         = useState<Record<number, { value: string; risk: number }>>({})
-  const [currentQ, setCurrentQ]       = useState(0)
-  const [showResult, setShowResult]   = useState(false)
-
+  const [answers, setAnswers]       = useState<Record<number, { value: string; risk: number }>>({})
+  const [currentQ, setCurrentQ]     = useState(0)
+  const [showResult, setShowResult] = useState(false)
 
   const totalScore = Object.values(answers).reduce((sum, a) => sum + a.risk, 0)
-  const result = getResult(totalScore)
-  const progress = Math.round((currentQ / QUESTIONS.length) * 100)
-
-  const question = QUESTIONS[currentQ]
+  const result     = getResult(totalScore)
+  const progress   = Math.round((currentQ / QUESTIONS.length) * 100)
+  const question   = QUESTIONS[currentQ]
 
   function selectAnswer(qId: number, value: string, risk: number) {
     const newAnswers = { ...answers, [qId]: { value, risk } }
     setAnswers(newAnswers)
-
     if (currentQ < QUESTIONS.length - 1) {
       setTimeout(() => setCurrentQ(currentQ + 1), 300)
     } else {
@@ -140,51 +137,47 @@ export default function CRBQuizPage() {
   }
 
   const colorMap = {
-    emerald: { bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400', btn: 'bg-emerald-500 hover:bg-emerald-400' },
-    blue:    { bg: 'bg-blue-500/10',    border: 'border-blue-500/20',    text: 'text-blue-400',    btn: 'bg-blue-500 hover:bg-blue-400' },
-    amber:   { bg: 'bg-amber-500/10',   border: 'border-amber-500/20',   text: 'text-amber-400',   btn: 'bg-amber-500 hover:bg-amber-400' },
-    red:     { bg: 'bg-red-500/10',     border: 'border-red-500/20',     text: 'text-red-400',     btn: 'bg-red-500 hover:bg-red-400' },
+    emerald: { bg: 'bg-emerald-50', border: 'border-emerald-500', text: 'text-emerald-700', btn: 'bg-emerald-600 border-emerald-600 hover:bg-emerald-700' },
+    blue:    { bg: 'bg-blue-50',    border: 'border-blue-500',    text: 'text-blue-700',    btn: 'bg-blue-600 border-blue-600 hover:bg-blue-700' },
+    amber:   { bg: 'bg-amber-50',   border: 'border-amber-500',   text: 'text-amber-700',   btn: 'bg-amber-600 border-amber-600 hover:bg-amber-700' },
+    red:     { bg: 'bg-red-50',     border: 'border-red-500',     text: 'text-red-700',     btn: 'bg-red-600 border-red-600 hover:bg-red-700' },
   } as const
   const c = colorMap[result.color as keyof typeof colorMap]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-white text-gray-900">
       <Header />
 
       <div className="max-w-2xl mx-auto px-4 py-10">
-        <Link href="/" className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-8 text-sm">
+        <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-900 transition-colors mb-8 text-sm font-mono">
           <ArrowLeft className="w-4 h-4" /> Back
         </Link>
 
         {/* Header */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-5">
-            <Search className="w-4 h-4 text-blue-400" />
-            <span className="text-blue-400 text-sm font-medium">Am I CRB Blacklisted?</span>
-          </div>
-          <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">Quick CRB Risk Assessment</h1>
-          <p className="text-slate-400 text-sm">5 questions · 2 minutes · Get your personalised result instantly</p>
+        <div className="mb-8">
+          <span className="font-mono text-sm font-bold uppercase tracking-widest border-2 border-blue-600 text-blue-600 px-3 py-1 mb-5 inline-flex items-center gap-2">
+            <Search className="w-4 h-4" /> Am I CRB Blacklisted?
+          </span>
+          <h1 className="text-3xl md:text-4xl font-bold font-serif leading-tight mt-4 mb-2">Quick CRB Risk Assessment</h1>
+          <p className="text-gray-600 font-mono text-sm">5 questions · 2 minutes · Get your personalised result instantly</p>
         </div>
 
         {!showResult ? (
-          <div className="bg-slate-800/50 border border-slate-700 rounded-2xl overflow-hidden">
+          <div className="border-2 border-black overflow-hidden">
             {/* Progress bar */}
-            <div className="h-1.5 bg-slate-700">
-              <div
-                className="h-full bg-emerald-500 transition-all duration-500"
-                style={{ width: `${progress}%` }}
-              />
+            <div className="h-2 bg-gray-200">
+              <div className="h-full bg-black transition-all duration-500" style={{ width: `${progress}%` }} />
             </div>
 
             <div className="p-7">
               <div className="flex items-center justify-between mb-6">
-                <span className="text-xs text-slate-500">Question {currentQ + 1} of {QUESTIONS.length}</span>
-                <span className="text-xs text-emerald-400">{progress}% complete</span>
+                <span className="text-xs font-mono text-gray-500 uppercase tracking-wide">Question {currentQ + 1} of {QUESTIONS.length}</span>
+                <span className="text-xs font-mono font-bold text-emerald-600">{progress}% complete</span>
               </div>
 
-              <h2 className="text-lg font-bold text-white mb-2">{question.text}</h2>
+              <h2 className="text-xl font-bold font-serif mb-2">{question.text}</h2>
               {question.subtext && (
-                <p className="text-slate-400 text-sm mb-6">{question.subtext}</p>
+                <p className="text-gray-500 text-sm mb-6 font-mono">{question.subtext}</p>
               )}
 
               <div className="space-y-3">
@@ -194,84 +187,77 @@ export default function CRBQuizPage() {
                     <button
                       key={opt.value}
                       onClick={() => selectAnswer(question.id, opt.value, opt.risk)}
-                      className={`w-full text-left p-4 rounded-xl border transition-all flex items-center gap-3 ${
+                      className={`w-full text-left p-4 border-2 transition-all flex items-center gap-3 ${
                         selected
-                          ? 'border-emerald-500 bg-emerald-500/10 text-white'
-                          : 'border-slate-600 bg-slate-700/30 text-slate-300 hover:border-emerald-500/50 hover:bg-slate-700/50'
+                          ? 'border-black bg-black text-white'
+                          : 'border-gray-300 bg-white text-gray-700 hover:border-black hover:bg-gray-50'
                       }`}
                     >
-                      <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${
-                        selected ? 'border-emerald-500 bg-emerald-500' : 'border-slate-500'
+                      <div className={`w-5 h-5 border-2 flex items-center justify-center shrink-0 transition-all ${
+                        selected ? 'border-white bg-white' : 'border-gray-400'
                       }`}>
-                        {selected && <div className="w-2 h-2 bg-white rounded-full" />}
+                        {selected && <div className="w-2 h-2 bg-black" />}
                       </div>
-                      <span className="text-sm">{opt.label}</span>
-                      <ChevronRight className="w-4 h-4 text-slate-500 ml-auto shrink-0" />
+                      <span className="text-sm font-medium">{opt.label}</span>
+                      <ChevronRight className="w-4 h-4 ml-auto shrink-0 opacity-50" />
                     </button>
                   )
                 })}
               </div>
 
-              {/* Back button */}
               {currentQ > 0 && (
-                <button onClick={() => setCurrentQ(currentQ - 1)}
-                  className="mt-5 text-xs text-slate-500 hover:text-slate-300 transition-colors">
+                <button onClick={() => setCurrentQ(currentQ - 1)} className="mt-5 text-xs font-mono text-gray-500 hover:text-gray-900 transition-colors">
                   ← Previous question
                 </button>
               )}
             </div>
           </div>
         ) : (
-          /* Result */
           <div className="space-y-5">
             {/* Result card */}
-            <div className={`border rounded-2xl p-7 ${c.bg} ${c.border}`}>
+            <div className={`border-2 p-7 ${c.bg} ${c.border}`}>
               <div className="flex items-start gap-4 mb-5">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${c.bg}`}>
+                <div className={`w-12 h-12 border-2 flex items-center justify-center shrink-0 ${c.border}`}>
                   <result.icon className={`w-7 h-7 ${c.text}`} />
                 </div>
                 <div>
-                  <h2 className={`text-xl font-bold ${c.text} mb-1`}>{result.headline}</h2>
-                  <p className="text-xs text-slate-500">Risk score: {totalScore}/17</p>
+                  <h2 className={`text-xl font-bold font-serif ${c.text} mb-1`}>{result.headline}</h2>
+                  <p className="text-xs font-mono text-gray-500">Risk score: {totalScore}/17</p>
                 </div>
               </div>
-              <p className="text-slate-300 text-sm leading-relaxed mb-5">{result.message}</p>
+              <p className="text-gray-700 text-sm leading-relaxed mb-5">{result.message}</p>
 
-              {/* Next step */}
-              <div className="bg-slate-900/40 rounded-xl p-4">
-                <p className="text-xs text-slate-400 mb-3 font-semibold uppercase tracking-wider">Recommended Next Step</p>
-                <p className="text-white text-sm font-medium">{result.action}</p>
-
-                <div className="flex flex-wrap gap-3 mt-4">
+              <div className="bg-white border-2 border-black p-4">
+                <p className="text-xs font-mono font-bold text-gray-500 mb-2 uppercase tracking-widest">Recommended Next Step</p>
+                <p className="font-bold font-serif mb-4">{result.action}</p>
+                <div className="flex flex-wrap gap-3">
                   <a href="tel:*433%23"
-                    className={`inline-flex items-center gap-2 px-4 py-2.5 ${c.btn} text-slate-900 font-semibold rounded-lg text-sm transition-colors`}>
+                    className={`inline-flex items-center gap-2 px-4 py-2.5 text-white font-bold font-mono border-2 transition-colors uppercase tracking-wide text-sm ${c.btn}`}>
                     Dial *433# (Free check)
                   </a>
                   <Link href="/crb-check"
-                    className="inline-flex items-center gap-2 px-4 py-2.5 border border-slate-600 hover:border-slate-400 text-slate-300 rounded-lg text-sm transition-colors">
+                    className="inline-flex items-center gap-2 px-4 py-2.5 border-2 border-black text-gray-900 font-bold font-mono hover:bg-black hover:text-white transition-colors uppercase tracking-wide text-sm">
                     Full CRB Guide
                   </Link>
                 </div>
               </div>
             </div>
 
-
-
             {/* Answer summary */}
-            <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-5">
-              <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">Your Answers</h3>
-              <div className="space-y-3">
+            <div className="border-2 border-black p-5">
+              <h3 className="font-mono text-sm font-bold uppercase tracking-widest mb-4 text-gray-500">Your Answers</h3>
+              <div className="space-y-4">
                 {QUESTIONS.map(q => {
                   const ans = answers[q.id]
                   const opt = q.options.find(o => o.value === ans?.value)
                   return (
-                    <div key={q.id} className="flex items-start gap-3">
-                      <span className={`text-xs font-bold w-4 shrink-0 mt-0.5 ${ans?.risk === 0 ? 'text-emerald-400' : ans?.risk <= 2 ? 'text-amber-400' : 'text-red-400'}`}>
+                    <div key={q.id} className="flex items-start gap-3 border-b border-gray-100 pb-3 last:border-b-0 last:pb-0">
+                      <span className={`text-xs font-bold font-mono w-5 shrink-0 mt-0.5 ${ans?.risk === 0 ? 'text-emerald-600' : ans?.risk <= 2 ? 'text-amber-600' : 'text-red-600'}`}>
                         Q{q.id}
                       </span>
                       <div>
-                        <p className="text-slate-400 text-xs">{q.text}</p>
-                        <p className={`text-sm font-medium mt-0.5 ${ans?.risk === 0 ? 'text-emerald-400' : ans?.risk <= 2 ? 'text-amber-400' : 'text-red-400'}`}>
+                        <p className="text-gray-500 text-xs">{q.text}</p>
+                        <p className={`text-sm font-bold font-serif mt-0.5 ${ans?.risk === 0 ? 'text-emerald-600' : ans?.risk <= 2 ? 'text-amber-600' : 'text-red-600'}`}>
                           {opt?.label}
                         </p>
                       </div>
@@ -281,7 +267,7 @@ export default function CRBQuizPage() {
               </div>
             </div>
 
-            <button onClick={restart} className="w-full py-3 border border-slate-600 hover:border-slate-400 text-slate-400 hover:text-white rounded-xl text-sm transition-colors">
+            <button onClick={restart} className="w-full py-3 border-2 border-black text-gray-700 hover:bg-black hover:text-white transition-colors font-mono font-bold uppercase tracking-wide text-sm">
               Retake the Quiz
             </button>
           </div>
@@ -289,37 +275,23 @@ export default function CRBQuizPage() {
       </div>
 
       {/* Related guides */}
-      <section className="mt-14 mb-2">
-        <h2 className="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4 px-4 sm:px-0">Next steps</h2>
-        <div className="grid sm:grid-cols-2 gap-3 px-4 sm:px-0">
-          <Link href="/crb-check" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
-            <span className="text-xl shrink-0">📊</span>
-            <div>
-              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">Full CRB Check Guide</p>
-              <p className="text-stone-500 text-xs mt-0.5">How to get your full credit report and dispute errors</p>
-            </div>
-          </Link>
-          <Link href="/blacklist" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
-            <span className="text-xl shrink-0">🚫</span>
-            <div>
-              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">Loan App Blacklist</p>
-              <p className="text-stone-500 text-xs mt-0.5">Apps known for illegal CRB listings</p>
-            </div>
-          </Link>
-          <Link href="/cbk-licensed" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
-            <span className="text-xl shrink-0">✅</span>
-            <div>
-              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">Licensed Apps Only</p>
-              <p className="text-stone-500 text-xs mt-0.5">Borrow from regulated lenders to protect your CRB</p>
-            </div>
-          </Link>
-          <Link href="/loan-finder" className="flex items-start gap-3 bg-white/5 border border-white/10 hover:border-amber-400/30 rounded-xl p-4 transition-all group">
-            <span className="text-xl shrink-0">🔍</span>
-            <div>
-              <p className="font-semibold text-white text-sm group-hover:text-amber-400 transition-colors">Find a Loan</p>
-              <p className="text-stone-500 text-xs mt-0.5">Options available even with CRB issues</p>
-            </div>
-          </Link>
+      <section className="max-w-2xl mx-auto px-4 pb-12 mt-8">
+        <h2 className="font-mono text-sm font-bold uppercase tracking-widest mb-4 text-gray-500">Next Steps</h2>
+        <div className="grid sm:grid-cols-2 gap-0 border-2 border-black divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-black">
+          {[
+            { href: '/crb-check',  emoji: '📊', title: 'Full CRB Check Guide',  desc: 'How to get your full credit report and dispute errors' },
+            { href: '/blacklist',  emoji: '🚫', title: 'Loan App Blacklist',     desc: 'Apps known for illegal CRB listings' },
+            { href: '/cbk-licensed', emoji: '✅', title: 'Licensed Apps Only',  desc: 'Borrow from regulated lenders to protect your CRB' },
+            { href: '/loan-finder',emoji: '🔍', title: 'Find a Loan',           desc: 'Options available even with CRB issues' },
+          ].map((g) => (
+            <Link key={g.href} href={g.href} className="flex items-start gap-3 p-4 hover:bg-gray-50 transition-colors group">
+              <span className="text-xl shrink-0">{g.emoji}</span>
+              <div>
+                <p className="font-bold font-serif group-hover:text-emerald-600 transition-colors text-sm">{g.title}</p>
+                <p className="text-gray-500 text-xs mt-0.5 font-mono">{g.desc}</p>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
